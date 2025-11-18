@@ -4,19 +4,19 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recha
 function PieChartComponent({ data }) {
   const cardStyle = {
     background: 'rgba(255, 255, 255, 0.95)',
-    borderRadius: '24px',
-    padding: '40px',
+    borderRadius: '20px',
+    padding: '28px',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
   }
 
   const titleStyle = {
-    fontSize: '28px',
+    fontSize: '22px',
     fontWeight: '800',
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    marginBottom: '30px',
+    marginBottom: '24px',
     textAlign: 'center',
   }
 

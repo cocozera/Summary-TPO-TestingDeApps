@@ -7,28 +7,30 @@ import AdvancedCharts from './AdvancedCharts'
 
 function Dashboard({ data, runName }) {
   const containerStyle = {
-    maxWidth: '1400px',
+    maxWidth: '100%',
     margin: '0 auto',
+    width: '100%',
   }
 
   const shellStyle = {
     background: 'rgba(255, 255, 255, 0.98)',
-    borderRadius: '32px',
+    borderRadius: '24px',
     boxShadow: '0 24px 60px rgba(15, 23, 42, 0.25)',
     padding: '32px 36px 40px',
     border: '1px solid #e5e7eb',
     position: 'relative',
+    minHeight: 'calc(100vh - 40px)',
   }
 
   const browserBarStyle = {
-    height: '26px',
-    borderRadius: '18px',
+    height: '24px',
+    borderRadius: '12px',
     background: '#111827',
     display: 'flex',
     alignItems: 'center',
-    padding: '0 16px',
-    marginBottom: '28px',
-    gap: '8px',
+    padding: '0 12px',
+    marginBottom: '32px',
+    gap: '6px',
   }
 
   const circleStyle = color => ({

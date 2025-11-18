@@ -3,9 +3,9 @@ import React from 'react'
 function StatsGrid({ data }) {
   const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '25px',
-    marginBottom: '30px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '24px',
+    marginBottom: '36px',
   }
 
   const stats = [
@@ -59,8 +59,8 @@ function StatsGrid({ data }) {
 function StatCard({ label, value, icon, gradient }) {
   const cardStyle = {
     background: '#f9fafb',
-    borderRadius: '28px',
-    padding: '28px 26px 30px',
+    borderRadius: '20px',
+    padding: '24px 20px 26px',
     boxShadow: '0 24px 50px rgba(15, 23, 42, 0.18)',
     position: 'relative',
     overflow: 'hidden',
@@ -69,15 +69,15 @@ function StatCard({ label, value, icon, gradient }) {
   }
 
   const iconContainerStyle = {
-    width: '64px',
-    height: '64px',
-    borderRadius: '20px',
+    width: '56px',
+    height: '56px',
+    borderRadius: '16px',
     background: gradient,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '30px',
-    marginBottom: '20px',
+    fontSize: '26px',
+    marginBottom: '16px',
     boxShadow: '0 18px 30px rgba(148, 163, 184, 0.55)',
   }
 
@@ -91,7 +91,7 @@ function StatCard({ label, value, icon, gradient }) {
   }
 
   const valueStyle = {
-    fontSize: '40px',
+    fontSize: '36px',
     fontWeight: '900',
     color: '#4f46e5',
     lineHeight: '1',

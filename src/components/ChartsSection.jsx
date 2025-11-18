@@ -6,8 +6,8 @@ function ChartsSection({ data }) {
   const sectionStyle = {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
-    gap: '30px',
-    marginBottom: '30px',
+    gap: '24px',
+    marginBottom: '36px',
   }
 
   const responsiveStyle = {

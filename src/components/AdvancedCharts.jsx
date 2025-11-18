@@ -20,9 +20,9 @@ import {
 function AdvancedCharts({ data }) {
   const sectionStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gap: '24px',
-    marginBottom: '30px',
+    marginBottom: '36px',
   }
 
   return (
@@ -30,7 +30,6 @@ function AdvancedCharts({ data }) {
       <CoverageDonut data={data} />
       <BugsSeverityChart data={data} />
       <BugsStatusChart data={data} />
-      <ExecutionTrendChart data={data} />
       <TesterQualityChart data={data} />
     </div>
   )
@@ -39,8 +38,8 @@ function AdvancedCharts({ data }) {
 function Card({ title, subtitle, children }) {
   const cardStyle = {
     background: 'rgba(255, 255, 255, 0.98)',
-    borderRadius: '24px',
-    padding: '28px 28px 30px',
+    borderRadius: '20px',
+    padding: '24px 24px 26px',
     boxShadow: '0 10px 30px rgba(15, 23, 42, 0.16)',
   }
 
@@ -51,14 +50,14 @@ function Card({ title, subtitle, children }) {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    marginBottom: '4px',
+    marginBottom: '6px',
   }
 
   const subtitleStyle = {
     fontSize: '13px',
     fontWeight: 500,
     color: '#94a3b8',
-    marginBottom: '18px',
+    marginBottom: '22px',
   }
 
   return (
@@ -79,8 +78,8 @@ function ExecutionTrendChart({ data }) {
 
   return (
     <Card
-      title="Evolución de la cobertura"
-      subtitle="Cómo aumenta la cobertura a medida que se ejecutan los casos"
+      title="Evolución de la cobertura global"
+      subtitle="Cobertura acumulada de todos los RUNs a medida que se ejecutan los casos"
     >
       <ResponsiveContainer width="100%" height={260}>
         <AreaChart data={trend} margin={{ top: 10, right: 10, left: 0, bottom: 5 }}>
@@ -201,10 +200,12 @@ function TesterQualityChart({ data }) {
 }
 
 function CoverageDonut({ data }) {
-  const notExecuted = Math.max(data.testsPlanificados - data.testsEjecutados, 0)
+  // Usar cobertura global: todos los ejecutados (de todos los RUNs) vs planificados
+  const testsEjecutadosGlobal = Math.round((data.cobertura * data.testsPlanificados) / 100)
+  const notExecuted = Math.max(data.testsPlanificados - testsEjecutadosGlobal, 0)
 
   const coverageData = [
-    { name: 'Ejecutado', value: data.testsEjecutados },
+    { name: 'Ejecutado', value: testsEjecutadosGlobal },
     { name: 'No ejecutado', value: notExecuted },
   ]
 
